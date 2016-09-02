@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="iDaemon" customModuleProvider="target">
             <connections>
+                <outlet property="activateStartup" destination="TC0-I5-dhr" id="MXt-HD-kP9"/>
                 <outlet property="startScript" destination="guF-4s-z2C" id="QrS-Jk-Ib4"/>
                 <outlet property="stopScript" destination="eyR-Ha-8pg" id="CTx-KJ-Vvc"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -17,7 +17,7 @@
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="219"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="219"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +31,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="guF-4s-z2C">
-                        <rect key="frame" x="20" y="152" width="440" height="22"/>
+                        <rect key="frame" x="20" y="154" width="440" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5e1-CI-aDC">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -39,7 +39,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Pn-wE-7Gr">
-                        <rect key="frame" x="18" y="127" width="444" height="17"/>
+                        <rect key="frame" x="18" y="129" width="444" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stop script:" id="qyc-cM-R9s">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +47,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eyR-Ha-8pg">
-                        <rect key="frame" x="20" y="97" width="440" height="22"/>
+                        <rect key="frame" x="20" y="101" width="440" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VHc-m8-NaQ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -67,24 +67,34 @@
                             <action selector="save:" target="-2" id="TwK-aa-Dwt"/>
                         </connections>
                     </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="TC0-I5-dhr">
+                        <rect key="frame" x="18" y="69" width="444" height="18"/>
+                        <buttonCell key="cell" type="check" title="Activate on startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DJh-VS-KKh">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="wFv-NK-PqX" secondAttribute="bottom" constant="20" id="1B1-oJ-VdN"/>
-                    <constraint firstItem="eyR-Ha-8pg" firstAttribute="top" secondItem="6Pn-wE-7Gr" secondAttribute="bottom" constant="8" id="372-uA-S3J"/>
+                    <constraint firstItem="eyR-Ha-8pg" firstAttribute="top" secondItem="6Pn-wE-7Gr" secondAttribute="bottom" constant="6" id="372-uA-S3J"/>
                     <constraint firstItem="6Pn-wE-7Gr" firstAttribute="top" secondItem="guF-4s-z2C" secondAttribute="bottom" constant="8" id="4AE-wq-khz"/>
                     <constraint firstItem="ZiS-vT-EPc" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="5le-bf-wmC"/>
-                    <constraint firstItem="guF-4s-z2C" firstAttribute="top" secondItem="ZiS-vT-EPc" secondAttribute="bottom" constant="8" id="6AI-yt-agR"/>
+                    <constraint firstItem="guF-4s-z2C" firstAttribute="top" secondItem="ZiS-vT-EPc" secondAttribute="bottom" constant="6" id="6AI-yt-agR"/>
                     <constraint firstAttribute="trailing" secondItem="wFv-NK-PqX" secondAttribute="trailing" constant="20" id="8Ng-MY-Euc"/>
                     <constraint firstItem="6Pn-wE-7Gr" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="GZh-Si-Eg3"/>
                     <constraint firstItem="eyR-Ha-8pg" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Mhi-S0-wdK"/>
+                    <constraint firstItem="TC0-I5-dhr" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Qcx-tz-643"/>
                     <constraint firstAttribute="trailing" secondItem="ZiS-vT-EPc" secondAttribute="trailing" constant="20" id="Umd-XX-ZHt"/>
+                    <constraint firstItem="TC0-I5-dhr" firstAttribute="top" secondItem="eyR-Ha-8pg" secondAttribute="bottom" constant="16" id="V3m-0V-3hv"/>
                     <constraint firstItem="guF-4s-z2C" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="bvv-DB-K92"/>
                     <constraint firstItem="6Pn-wE-7Gr" firstAttribute="top" secondItem="guF-4s-z2C" secondAttribute="bottom" constant="8" id="cDs-lm-dF1"/>
-                    <constraint firstItem="eyR-Ha-8pg" firstAttribute="top" secondItem="6Pn-wE-7Gr" secondAttribute="bottom" constant="8" id="cta-Xc-Y88"/>
+                    <constraint firstItem="eyR-Ha-8pg" firstAttribute="top" secondItem="6Pn-wE-7Gr" secondAttribute="bottom" constant="6" id="cta-Xc-Y88"/>
                     <constraint firstAttribute="trailing" secondItem="6Pn-wE-7Gr" secondAttribute="trailing" constant="20" id="dYq-zn-qsv"/>
                     <constraint firstAttribute="trailing" secondItem="eyR-Ha-8pg" secondAttribute="trailing" constant="20" id="dbs-tS-KKy"/>
+                    <constraint firstAttribute="trailing" secondItem="TC0-I5-dhr" secondAttribute="trailing" constant="20" id="gGu-gS-jHd"/>
                     <constraint firstItem="ZiS-vT-EPc" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="qhP-ML-5Hf"/>
-                    <constraint firstItem="guF-4s-z2C" firstAttribute="top" secondItem="ZiS-vT-EPc" secondAttribute="bottom" constant="8" id="tN9-Ks-qud"/>
+                    <constraint firstItem="guF-4s-z2C" firstAttribute="top" secondItem="ZiS-vT-EPc" secondAttribute="bottom" constant="6" id="tN9-Ks-qud"/>
                     <constraint firstAttribute="trailing" secondItem="guF-4s-z2C" secondAttribute="trailing" constant="20" id="wdr-kQ-LgF"/>
                 </constraints>
             </view>

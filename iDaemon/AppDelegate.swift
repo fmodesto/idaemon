@@ -27,6 +27,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusItem.button!.image = NSImage(named: "red")
         statusItem.menu = menu
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("activateStartup") ?? false {
+            startScript(self)
+        }
     }
     
     func startScript(sender: AnyObject) {
